@@ -5,6 +5,8 @@ import 'package:travel_app/features/shared/model/destination.dart';
 
 final destinationService = DestinationService();
 
+// TODO: move fakeBackendData to a json file
+
 const fakeBackendData =
     '''[{"name":"Andes Mountain","continent":"South, America","description":"The Andes, running along South America's western side, is among the world's longest mountain ranges. Its varied terrain encompasses glaciers, volcanoes, grassland, desert, lakes and forest. The mountains shelter pre-Columbian archaeological sites and wildlife including chinchillas and condors.","price":230,"temperature":16,"rating":4.5,"flightDuration":8,"image":"/Users/kwe/flutter-projects/FlutterWidgets/flutter_widgets/assets/andes-mountain.png"},
         {"name":"Mount Fuji","continent":"Tokyo, Japan","description":"Japan’s Mt. Fuji is an active volcano about 100 kilometers southwest of Tokyo. Commonly called “Fuji-san,” it’s the country’s tallest peak, at 3,776 meters. A pilgrimage site for centuries, it’s considered one of Japan’s 3 sacred mountains, and summit hikes remain a popular activity.","price":675,"temperature":23,"rating":4.7,"flightDuration":12,"image":"/Users/kwe/flutter-projects/FlutterWidgets/flutter_widgets/assets/mount-fuji-by-night.jpeg"},
@@ -27,7 +29,7 @@ class DestinationService extends ChangeNotifier {
 
     _destinations = [for (Map<String, dynamic> json in data) Destination.fromMap(json)];
 
-    print(_destinations);
+    debugPrint("_destinations");
 
     return _destinations;
   }
