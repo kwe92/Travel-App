@@ -20,6 +20,12 @@ class DestinationService extends ChangeNotifier {
 
   List<Destination> get destinations => _destinations;
 
+  static final _singleton = DestinationService._internal();
+
+  DestinationService._internal();
+
+  factory DestinationService() => _singleton;
+
   Future<List<Destination>> fetchData() async {
     await Future.delayed(const Duration(seconds: 2, milliseconds: 500));
 
